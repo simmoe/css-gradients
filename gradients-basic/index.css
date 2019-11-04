@@ -1,0 +1,40 @@
+html, body, h1, h2, h3, h4, h5, h6, p, div, span, main, header, footer, article, section{
+    margin:0;
+    padding:0;
+    font-family:Arial, 'Open Sans';
+}
+*{
+    box-sizing: border-box;
+}
+
+main{
+    display:grid;
+    height:100vh;
+    grid-template-columns:repeat(2, 1fr);
+}
+
+.box{
+    display:grid;
+    place-items:center;
+}
+
+#box1{
+    background-image: linear-gradient(orange, #fff);    
+    background-image: linear-gradient(to right, orange, #fff);    
+}
+
+#box2{
+    background-image: linear-gradient(orange, #fff);    
+    background-image: linear-gradient(orange, #fff 10%);    
+    background-image: linear-gradient(orange 80%, #fff);    
+    background-image: linear-gradient(orangered, orange 30%, #fff 60%);    
+}
+
+#box3{
+    background-image: radial-gradient( #fff, orangered);
+    background-image: radial-gradient(circle at 50%, #fff, #fff 20%, orange 50%, red);
+    background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
+}
+#box4{
+    background: radial-gradient(ellipse at 50%, #333, #333 50%, #eee 75%);
+}

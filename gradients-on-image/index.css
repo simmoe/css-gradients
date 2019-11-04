@@ -1,0 +1,103 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+span,
+main,
+header,
+footer,
+article,
+section {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, 'Open Sans';
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background-color: #eee;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.box {
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.box>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+#box1>.overlay {
+    background-image: linear-gradient(transparent 60%, black 80%)
+}
+
+#box1 > .overlay > h2 {
+    font-size: 10vh;
+    color: #eee;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+#box2>.overlay {
+    background-image: repeating-linear-gradient(to left, transparent, transparent 40px, #eee 40px, #eee 60px);
+}
+
+#box3>img {
+    width: 40vh;
+    height: 40vh;
+    border-radius: 50%;
+}
+
+#box3 .overlay {
+    background-image: radial-gradient(circle, transparent 0%, transparent 20%, white 40%);
+}
+
+/* There are four blend modes that effortlessly make text cutouts: multiply, screen, darken, and lighten. Applying these to the top element of a stack of image and text, text being at top, creates the knockout design. */
+
+#box4 .overlay h2 {
+    color: white; 
+    color: black; 
+
+    width:100%;
+    height:100%;
+    display:grid;
+    place-items:center;
+    font-size:14vh;
+    font-weight:700;
+    background: rgb(255, 255, 255);
+    /* background: rgb(100, 100, 100); */
+
+    /* The source color is multiplied by the destination color and replaces the destination. */
+    mix-blend-mode:multiply;
+
+/* Multiplies the complements of the backdrop and source color values, then complements the result. */
+    mix-blend-mode: screen;
+}
